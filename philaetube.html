@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PhilaeTube · aqsamakesthings</title>
+  <meta name="description" content="Case study: designing a breakaway, one-way valve to prevent chest tube dislodgment. University of Pittsburgh bioengineering senior design, 2025–2026.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css?v=5">
+  <script>document.documentElement.classList.add("js");</script>
+  <script defer src="assets/js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="wordmark" href="index.html" aria-label="aqsamakesthings, home">aqsa<span>makes</span>things</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li class="has-sub is-section"><a href="work.html">Work</a>
+            <ul class="subnav">
+              <li><a href="philaetube.html" aria-current="page">PhilaeTube case study</a></li>
+            </ul>
+          </li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="making.html">For the love of making</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <header class="case-hero">
+      <div class="wrap">
+        <p class="label"><a href="work.html">Work</a> / Case study</p>
+        <h1>PhilaeTube</h1>
+        <p class="subtitle">A chest tube dislodgment prevention system</p>
+        <dl class="facts" style="max-width:52rem">
+          <dt>Context</dt><dd>Bioengineering senior design, University of Pittsburgh. Fall 2025 – Spring 2026.</dd>
+          <dt>My role</dt><dd>Need-finding coordination, then design lead for the one-way breakaway valve.</dd>
+          <dt>With</dt><dd>My senior design team, including A. Kulkarni, R. Deepak, and M. Sun. The WISER simulation center hosted our ethnography.</dd>
+        </dl>
+      </div>
+      <div class="wrap">
+        <figure class="figure-wide" style="margin-top:2rem">
+          <img src="assets/img/pt-wiser.webp" width="1600" height="1200" fetchpriority="high" decoding="async"
+               alt="A simulation operating room at WISER: a mannequin lies on a stretcher beside monitoring equipment while two team members stand nearby.">
+          <figcaption><span class="fig">Fig. 1</span>Bioengineering senior design group in WISER's simulation operating room.</figcaption>
+        </figure>
+      </div>
+    </header>
+
+    <div class="wrap case-layout" style="padding-top:3rem">
+      <nav class="toc" aria-label="On this page">
+        <ol>
+          <li><a href="#need">The need</a></li>
+          <li><a href="#designer">Thinking like a designer</a></li>
+          <li><a href="#engineer">Thinking like an engineer</a></li>
+          <li><a href="#change">The key design change</a></li>
+          <li><a href="#vv">Verification &amp; validation</a></li>
+          <li><a href="#learned">What I took from it</a></li>
+        </ol>
+      </nav>
+
+      <div>
+        <section class="case-section" id="need" aria-labelledby="need-h">
+          <p class="label">01</p>
+          <h2 id="need-h">The need</h2>
+          <p>Chest tubes in critical care patients are often dislodged, which can lead to tension pneumothorax, hemothorax, and infection. Sutures, the current standard for securing them, don't reliably stop a tube from being pulled out by accident. We set out to secure chest tubes better, with the goals of reducing tissue trauma, avoiding emergency reinsertions, and shortening hospital stays caused by those complications.</p>
+          <p>The first phase centered on identifying and verifying a clinical need through an extensive ethnography plan. I coordinated communications with WISER and led my team through rapid brainstorming. I also designed our poster for the course's brainstorming session, where I pitched our clinical need to engineering and nursing students.</p>
+
+          <div class="figure-row crop" style="--cols:3">
+            <figure>
+              <img src="assets/img/pt-task.jpg" width="1000" height="887" loading="lazy" decoding="async"
+                   alt="Aqsa, wearing a navy sweatshirt, practices suturing on a silicone block at a table covered with a blue surgical drape.">
+              <figcaption><span class="fig">Fig. 2</span>Task analysis: suturing silicone chest tube blocks.</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/img/pt-sketch.jpg" width="1000" height="780" loading="lazy" decoding="async"
+                   alt="Pencil sketch of a chest tube entering the chest wall near the lungs, with a proposed securement mechanism drawn around it.">
+              <figcaption><span class="fig">Fig. 3</span>Preliminary sketch of a securement mechanism.</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/img/pt-poster.webp" width="900" height="1200" loading="lazy" decoding="async"
+                   alt="A tri-fold poster titled 'Securing Chest Tubes', with sections on the clinical need and current solutions, standing on a table.">
+              <figcaption><span class="fig">Fig. 4</span>The poster I designed for the brainstorming session.</figcaption>
+            </figure>
+          </div>
+
+          <h3 style="font-size:var(--step-1);margin-top:2.5rem">What we built</h3>
+          <ul class="features">
+            <li>An adhesive anchor and retainer, modified from the StatLock style, to stabilize the thoracic tube.</li>
+            <li>A translucent compressive wrap to limit tube movement while keeping the site visible.</li>
+            <li>A breakaway tube that prevents internal dislodgment of the proximal tube.</li>
+            <li>A one-way pressure valve at the breakaway point. This was my part of the design.</li>
+          </ul>
+        </section>
+
+        <section class="case-section" id="designer" aria-labelledby="designer-h">
+          <p class="label">02</p>
+          <h2 id="designer-h">Thinking like a designer</h2>
+          <p>In design, my strengths are rapid, low-resolution prototyping and "killer experiments": quick tests meant to break an idea early. As design lead for the one-way valve that would sit at the breakaway joint, I started with whatever was on hand.</p>
+          <div class="figure-row crop" style="--cols:3">
+            <figure>
+              <img src="assets/img/pt-cpr.webp" width="1200" height="900" loading="lazy" decoding="async"
+                   alt="The disassembled parts of a CPR mask valve laid out on a surface: blue plastic rings and a thin membrane.">
+              <figcaption><span class="fig">Fig. 5</span>A CPR valve I took apart to see how it keeps air flowing in only one direction.</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/img/pt-syringe.webp" width="900" height="1200" loading="lazy" decoding="async"
+                   alt="A small one-way valve made from two cut plastic syringe barrels joined together.">
+              <figcaption><span class="fig">Fig. 6</span>A one-way valve built in 15 minutes from two plastic syringes.</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/img/pt-sketching.jpg" width="564" height="900" loading="lazy" decoding="async"
+                   alt="Aqsa sitting at a table sketching in a notebook.">
+              <figcaption><span class="fig">Fig. 7</span>Sketching valve concepts.</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="case-section" id="engineer" aria-labelledby="engineer-h">
+          <p class="label">03</p>
+          <h2 id="engineer-h">Thinking like an engineer</h2>
+          <p>As the fall semester went on, I moved into medium-resolution prototyping in PLA. I also began defining the product design specifications, mapping user requirements to engineering requirements, drafting the risk analysis, and writing the verification and validation plan for the valve.</p>
+          <figure class="figure-wide" style="margin:2rem 0">
+            <img class="on-white" src="assets/img/pt-cad.webp" width="1280" height="670" loading="lazy" decoding="async"
+                 alt="Cross-sectional CAD model of the one-way valve assembly, with labeled rigid housing parts and a flexible sealing element.">
+            <figcaption><span class="fig">Fig. 8</span>Cross-section of the fall one-way valve assembly. Rigid 4000 V1 resin gave structural integrity, and Flexible 80A resin formed the seal.</figcaption>
+          </figure>
+          <figure class="figure-wide">
+            <img src="assets/img/pt-expo-fall.webp" width="1400" height="1050" loading="lazy" decoding="async"
+                 alt="Aqsa standing beside the team's project poster at the Fall 2025 design expo, holding a prototype.">
+            <figcaption><span class="fig">Fig. 9</span>Fall 2025 design expo.</figcaption>
+          </figure>
+        </section>
+
+        <section class="case-section" id="change" aria-labelledby="change-h">
+          <p class="label">04</p>
+          <h2 id="change-h">The key design change</h2>
+          <p>In spring 2026, informal verification testing showed that our check valve didn't prevent retrograde flow.</p>
+          <div class="callout">
+            <p>Before we froze the design, I proposed replacing the valve mechanism with a laser-cut piece of silicone sewn in place, like a button.</p>
+          </div>
+          <div class="figure-row crop" style="--cols:3">
+            <figure>
+              <img src="assets/img/pt-laser.webp" width="900" height="1200" loading="lazy" decoding="async"
+                   alt="Aqsa standing at a large laser cutter with its lid open, in a workshop.">
+              <figcaption><span class="fig">Fig. 10</span>Laser-cutting the silicone valve.</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/img/pt-sewing.webp" width="876" height="1200" loading="lazy" decoding="async"
+                   alt="Aqsa seated at a desk, carefully hand-sewing a small silicone piece into a valve housing.">
+              <figcaption><span class="fig">Fig. 11</span>Sewing the silicone valve into place.</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/img/pt-closed.webp" width="1400" height="1050" loading="lazy" decoding="async"
+                   alt="The final PhilaeTube breakaway valve in its closed configuration, joining two lengths of grey chest tubing.">
+              <figcaption><span class="fig">Fig. 12</span>The frozen design, closed configuration.</figcaption>
+            </figure>
+          </div>
+          <figure class="figure-wide">
+            <img class="on-white" src="assets/img/pt-drawing.webp" width="1338" height="940" loading="lazy" decoding="async"
+                 alt="Dimensioned engineering drawing of the final breakaway valve, showing an exploded view of the proximal tube, distal tube, and silicone-based flexible valve, plus section views of the breakaway component and one-way valve interface.">
+            <figcaption><span class="fig">Fig. 13</span>Engineering drawing of the final breakaway valve.</figcaption>
+          </figure>
+        </section>
+
+        <section class="case-section" id="vv" aria-labelledby="vv-h">
+          <p class="label">05</p>
+          <h2 id="vv-h">Verification &amp; validation</h2>
+          <p>With the design frozen, we moved into formal testing against our acceptance criteria.</p>
+          <div class="spec">
+            <div>
+              <h4>VER-003 · Ultimate breakaway force</h4>
+              <p>Axial separation force test from ISO 80369-20:2024. I ran it with A. Kulkarni on 11 units, using a 500 N force gauge and string.</p>
+              <p class="accept">Acceptance: 15–25 N</p>
+            </div>
+            <div>
+              <h4>VER-008 · Chemical resistance</h4>
+              <p>Resistance to disinfectants per ASTM D543, tested by wiping the valve with alcohol.</p>
+              <p class="accept">Acceptance: withstand 10 cleaning cycles</p>
+            </div>
+            <div>
+              <h4>VAL-001 · Physician validation</h4>
+              <p>Tests whether physicians can set up the device correctly without critical errors.</p>
+              <p class="accept">Acceptance: 0 critical errors, ≥90% correct workflow, mean setup ≤5 min</p>
+            </div>
+          </div>
+          <figure class="figure-wide" style="margin-bottom:2rem">
+            <img src="assets/img/pt-failures.jpg" width="1200" height="535" loading="lazy" decoding="async"
+                 alt="Three photos side by side showing failed test specimens: a separated joint, a broken string, and a detached adhesive bond.">
+            <figcaption><span class="fig">Fig. 14</span>Failure modes seen in VER-003: (a) joint failure, (b) string failure, (c) adhesive failure.</figcaption>
+          </figure>
+          <div class="figure-row crop" style="--cols:2">
+            <figure>
+              <img src="assets/img/pt-validation.webp" width="900" height="1200" loading="lazy" decoding="async"
+                   alt="Aqsa and two teammates standing on a staircase at Scaife Hall; one holds a simulation torso model.">
+              <figcaption><span class="fig">Fig. 15</span>With R. Deepak and M. Sun at Scaife Hall for validation testing.</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/img/pt-gunn.jpg" width="718" height="900" loading="lazy" decoding="async"
+                   alt="Aqsa explaining the PhilaeTube system to a physician, who examines the device on a simulation mannequin.">
+              <figcaption><span class="fig">Fig. 16</span>Walking Dr. Gunn through the system during validation.</figcaption>
+            </figure>
+          </div>
+          <figure class="figure-wide">
+            <img src="assets/img/pt-evolution.jpg" width="1200" height="773" loading="lazy" decoding="async"
+                 alt="Valve prototypes laid out on a blue surgical drape in six groups, with handwritten labels from Breakaway Valve V1 through V5 and Final.">
+            <figcaption><span class="fig">Fig. 17</span>The breakaway valve's evolution, from V1 in Fall 2025 to the final design in Spring 2026.</figcaption>
+          </figure>
+        </section>
+
+        <section class="case-section" id="learned" aria-labelledby="learned-h">
+          <p class="label">06</p>
+          <h2 id="learned-h">What I took from it</h2>
+          <p>This project ran the full arc for me: identifying a need with clinicians and nursing students, building rough prototypes fast, writing the specifications and risk analysis, and finally being willing to change the mechanism when testing showed it didn't work.</p>
+          <p style="margin-top:2.5rem"><a class="arrow-link" href="work.html">Back to all work</a></p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© <span id="year">2026</span> Aqsa Owais. Medical student, not a licensed physician.</p>
+      <ul>
+        <li><a href="mailto:aqsa.owais.nj@gmail.com">Email</a></li>
+        <li><a href="https://www.linkedin.com/in/aqsa-owais/">LinkedIn</a></li>
+        <li><a href="https://www.instagram.com/aqsamakesthings/">Instagram</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
