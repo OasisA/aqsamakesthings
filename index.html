@@ -8,9 +8,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap">
-  <link rel="stylesheet" href="assets/css/style.css?v=11">
+  <link rel="stylesheet" href="assets/css/style.css?v=15">
   <script>document.documentElement.classList.add("js");</script>
-  <script defer src="assets/js/main.js?v=5"></script>
+  <script defer src="assets/js/main.js?v=10"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -90,43 +90,41 @@
       </div>
     </section>
 
-    <!-- Selected work -->
-    <section class="section" aria-labelledby="work-title">
+    <!-- What I work with -->
+    <section class="section" id="tools" aria-labelledby="tools-title">
       <div class="wrap">
         <div class="section-head">
-          <p class="label">Selected work</p>
-          <h2 id="work-title">Projects</h2>
+          <p class="label">Tools &amp; software</p>
+          <h2 id="tools-title">What I work with</h2>
         </div>
-        <div class="cards">
-          <article class="card reveal">
-            <img src="assets/img/pt-closed.webp" width="1400" height="1050" loading="lazy" decoding="async"
-                 alt="The final PhilaeTube breakaway valve, a white cylindrical joint, connecting two lengths of grey ribbed chest tubing.">
-            <p class="meta">Senior design · Pitt Bioengineering · 2025–26</p>
-            <h3><a href="philaetube.html">PhilaeTube</a></h3>
-            <ul class="tags" aria-label="Threads"><li>Engineering</li><li class="t-med">Medicine</li></ul>
-            <p>A system to prevent chest tube dislodgment in critical care. I led design of the one-way breakaway valve, from need-finding to verification testing.</p>
-            <a class="arrow-link" href="philaetube.html">Read the case study</a>
-          </article>
-          <article class="card reveal">
-            <img src="assets/img/xp-2.webp" width="1050" height="1400" loading="lazy" decoding="async"
-                 alt="A prototype pediatric arm simulator: a white skeletal upper limb with articulated joints, photographed against a black background.">
-            <p class="meta">IDEA Lab · Spring 2023</p>
-            <h3><a href="work.html#bops">Bundled Orthopedic Procedural Simulator</a></h3>
-            <ul class="tags" aria-label="Threads"><li>Engineering</li><li class="t-med">Medicine</li><li class="t-com">Teaching</li></ul>
-            <p>A pediatric simulator that combines several orthopedic reductions in one trainer. We handed it to our mentor, Dr. Natan Cramer, to train incoming residents.</p>
-            <a class="arrow-link" href="work.html#bops">Read more</a>
-          </article>
-          <article class="card reveal">
-            <img src="assets/img/home-medtronic.webp" width="1050" height="1400" loading="lazy" decoding="async"
-                 alt="Aqsa standing in front of a wall of glossy blue panels.">
-            <p class="meta">Medtronic · Summers 2024 &amp; 2025</p>
-            <h3><a href="work.html#medtronic">Medical device R&amp;D</a></h3>
-            <ul class="tags" aria-label="Threads"><li>Engineering</li><li>Industry</li></ul>
-            <p>Two internships: one developing PTFE-free cathode formulations and laser-soldering experiments for implantable devices, and one building a shared materials database.</p>
-            <a class="arrow-link" href="work.html#medtronic">Read more</a>
-          </article>
+        <div class="tools-grid">
+          <div class="tool-group tool-group--fab">
+            <h3 class="label">In the shop</h3>
+            <ul class="tool-cards" role="list">
+              <li><a href="making.html#builds"><img src="assets/img/ig-barbie-arduino.jpg" alt="" loading="lazy" decoding="async"><span>FDM 3D printing<small>Arduino Uno case</small></span></a></li>
+              <li><a href="work.html#philaetube"><img src="assets/img/pt-evolution.jpg" alt="" loading="lazy" decoding="async"><span>SLA 3D printing<small>PhilaeTube valve prototypes</small></span></a></li>
+              <li><a href="making.html#builds"><img src="assets/img/pr-pi-cnc.jpg" alt="" loading="lazy" decoding="async"><span>CNC routing<small>Pi Day pizza crust</small></span></a></li>
+              <li><a href="making.html#builds"><img src="assets/img/ig-msa-welcome-sign.jpg" alt="" loading="lazy" decoding="async"><span>Laser cutting &amp; engraving<small>MSA welcome sign</small></span></a></li>
+              <li><a href="work.html#tap-rs"><img src="assets/img/idea-2.webp" alt="" loading="lazy" decoding="async"><span>Silicone molding<small>TAP-RS injection trainer</small></span></a></li>
+              <li><a href="work.html#bops"><img src="assets/img/xp-2.webp" alt="" loading="lazy" decoding="async"><span>Resin molding<small>B.O.P.S. arm</small></span></a></li>
+              <li><a href="work.html#bite"><img src="assets/img/mk-bite-rig.jpg" alt="" loading="lazy" decoding="async"><span>Electronics &amp; soldering<small>B.I.T.E. test rig</small></span></a></li>
+              <li><a href="making.html#builds"><img src="assets/img/ig-heatpress-shirt.jpg" alt="" loading="lazy" decoding="async"><span>Vinyl cutting &amp; heat press<small>St. Patrick's Day shirt workshop</small></span></a></li>
+              <li><a href="making.html#builds"><img src="assets/img/ig-makerbag.jpg" alt="" loading="lazy" decoding="async"><span>Sewing<small>The Makerbag tote</small></span></a></li>
+            </ul>
+          </div>
+          <div class="tool-group">
+            <h3 class="label">Design &amp; engineering software</h3>
+            <ul class="tool-chips" role="list"><li>Fusion 360</li><li>Ansys Granta</li><li>MATLAB</li><li>Arduino IDE</li><li>Visual Studio</li><li>Unity</li></ul>
+          </div>
+          <div class="tool-group">
+            <h3 class="label">Programming</h3>
+            <ul class="tool-chips" role="list"><li>Python</li><li>Java</li><li>C#</li><li>JavaScript</li><li>HTML</li><li>CSS</li></ul>
+          </div>
+          <div class="tool-group">
+            <h3 class="label">Methods &amp; data</h3>
+            <ul class="tool-chips" role="list"><li>Agile</li><li>Lean Six Sigma</li><li>Power BI</li><li>Microsoft Office</li></ul>
+          </div>
         </div>
-        <p style="margin-top:2.5rem"><a class="arrow-link" href="work.html">All projects, including FELLA, TAP-RS simulators, and stroke rehabilitation research</a></p>
       </div>
     </section>
 

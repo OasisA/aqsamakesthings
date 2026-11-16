@@ -64,6 +64,7 @@
       btn.appendChild(img);
       btn.addEventListener("click", function () { lastTrigger = btn; show(img); dlg.showModal(); });
     });
+    window.__openPhoto = function (img, trigger) { lastTrigger = trigger || null; show(img); dlg.showModal(); };
     dlg.querySelector(".lightbox-close").addEventListener("click", function () { dlg.close(); });
     dlg.querySelector(".lightbox-prev").addEventListener("click", function () { step(-1); });
     dlg.querySelector(".lightbox-next").addEventListener("click", function () { step(1); });
@@ -110,6 +111,69 @@
       mqBtn.setAttribute("aria-pressed", paused ? "true" : "false");
       mqBtn.textContent = paused ? "Play" : "Pause";
     });
+  }
+
+  // Making page: scroll panel arrows
+  var panel = document.querySelector("#builds .gallery");
+  if (panel) {
+    panel.classList.add("scroll-panel");
+    panel.setAttribute("tabindex", "0");
+    panel.setAttribute("aria-label", "Things built for fun, scroll sideways to see more");
+    var nav = document.createElement("div");
+    nav.className = "panel-nav";
+    nav.innerHTML = '<button type="button" class="panel-pause" aria-pressed="false">Pause</button>' +
+      '<button type="button" class="panel-btn" data-dir="-1" aria-label="Scroll left">&larr;</button>' +
+      '<button type="button" class="panel-btn" data-dir="1" aria-label="Scroll right">&rarr;</button>';
+    panel.parentNode.insertBefore(nav, panel);
+    var btns = nav.querySelectorAll(".panel-btn");
+    function updateBtns() {
+      btns[0].disabled = panel.scrollLeft < 4;
+      btns[1].disabled = panel.scrollLeft + panel.clientWidth > panel.scrollWidth - 4;
+    }
+    nav.addEventListener("click", function (e) {
+      var b = e.target.closest(".panel-btn");
+      if (!b) return;
+      panel.scrollBy({ left: Number(b.dataset.dir) * panel.clientWidth * 0.8, behavior: "smooth" });
+    });
+    panel.addEventListener("scroll", updateBtns, { passive: true });
+    window.addEventListener("resize", updateBtns);
+    updateBtns();
+    panel.querySelectorAll("figure").forEach(function (f) { f.classList.remove("reveal"); f.style.transitionDelay = ""; });
+
+    // Gentle automatic scroll: pauses on hover, focus, touch, or the Pause button
+    var pBtn = nav.querySelector(".panel-pause");
+    var autoOff = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var hold = 0, hoverP = false, focusP = false, visibleP = true, pos = panel.scrollLeft, lastT = performance.now(), atEndSince = 0;
+    function setPaused(v) { autoOff = v; pBtn.setAttribute("aria-pressed", v ? "true" : "false"); pBtn.textContent = v ? "Play" : "Pause"; }
+    setPaused(autoOff);
+    pBtn.addEventListener("click", function () { setPaused(!autoOff); });
+    panel.addEventListener("pointerenter", function (e) { if (e.pointerType === "mouse") hoverP = true; });
+    panel.addEventListener("pointerleave", function () { hoverP = false; });
+    panel.addEventListener("focusin", function () { focusP = true; });
+    panel.addEventListener("focusout", function () { focusP = false; });
+    ["pointerdown", "wheel", "touchstart"].forEach(function (ev) {
+      panel.addEventListener(ev, function () { hold = performance.now() + 4000; }, { passive: true });
+    });
+    nav.addEventListener("click", function (e) { if (e.target.closest(".panel-btn")) hold = performance.now() + 4000; });
+    if ("IntersectionObserver" in window) new IntersectionObserver(function (es) { visibleP = es[0].isIntersecting; }).observe(panel);
+    function tick(now) {
+      var dt = Math.min(50, now - lastT); lastT = now;
+      var max = panel.scrollWidth - panel.clientWidth;
+      if (!autoOff && !hoverP && !focusP && visibleP && !document.hidden && now > hold && max > 0) {
+        if (Math.abs(panel.scrollLeft - pos) > 2) pos = panel.scrollLeft;
+        if (pos >= max - 1) {
+          if (!atEndSince) atEndSince = now;
+          if (now - atEndSince > 1800) { panel.scrollTo({ left: 0, behavior: "smooth" }); pos = 0; atEndSince = 0; hold = now + 1500; }
+        } else {
+          pos = Math.min(max, pos + dt * 0.03);
+          panel.scrollLeft = pos;
+        }
+      } else {
+        pos = panel.scrollLeft;
+      }
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
   }
 
   // Case-study table of contents: highlight the section in view

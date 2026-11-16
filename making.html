@@ -8,9 +8,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap">
-  <link rel="stylesheet" href="assets/css/style.css?v=11">
+  <link rel="stylesheet" href="assets/css/style.css?v=15">
   <script>document.documentElement.classList.add("js");</script>
-  <script defer src="assets/js/main.js?v=5"></script>
+  <script defer src="assets/js/main.js?v=10"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -46,8 +46,7 @@
           <nav aria-label="Sections on this page" style="margin-top:1.5rem">
             <ul class="tags">
               <li><a href="#teaching">Teaching</a></li>
-              <li><a href="#workshops">Workshops</a></li>
-              <li><a href="#builds">Builds, signs &amp; art</a></li>
+              <li><a href="#builds">Things built for fun</a></li>
             </ul>
           </nav>
         </div>
@@ -106,12 +105,12 @@
       </div>
     </section>
 
-    <section class="section" id="workshops" aria-labelledby="workshops-title">
+    <section class="section" id="builds" aria-labelledby="builds-title">
       <div class="wrap">
         <div class="section-head">
-          <p class="label">02 · Makerspace workshops</p>
-          <h2 id="workshops-title">Workshops and shared making</h2>
-          <p>As a mentor and program manager at the Pitt Makerspace, I designed and led workshops to get more students from every discipline using the tools. I also ran moulage and silicone wound-effects workshops, including one for Pitt Student EMS; those photos aren't shown here.</p>
+          <p class="label">02 · Just for fun</p>
+          <h2 id="builds-title">Things built for fun</h2>
+          <p class="muted" style="font-size:0.95rem">The panel scrolls on its own; hover or touch to pause, and tap any photo to see it larger. Some projects include process shots from start to finish.</p>
         </div>
         <div class="gallery">
           <figure>
@@ -129,18 +128,6 @@
                  alt="A green T-shirt on a dress form, printed in silver with the words Lucky Lad and shamrocks.">
             <figcaption>A heat-pressed vinyl shirt from a friend's design. Mar 2026.</figcaption>
           </figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--tint" id="builds" aria-labelledby="builds-title">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="label">03 · Built for fun (and for friends)</p>
-          <h2 id="builds-title">Gifts, gadgets, signs, and art</h2>
-          <p>Things I've made for friends, for the student groups I belong to, and for myself, using laser cutting, CNC routing, soldering, sewing, 3D printing, CAD, and paint. Studying Renaissance art in Florence also reignited my love for drawing and painting.</p>
-        </div>
-        <div class="gallery">
           <figure>
             <img src="assets/img/ig-cowboy-engraving.jpg" width="540" height="720" loading="lazy" decoding="async"
                  alt="A smiling person holding up a round wooden ornament, laser-engraved with a cowboy hat, boots, and the words 'cowboy like me', hung on a green ribbon.">
@@ -161,20 +148,65 @@
                  alt="A gloved hand beside a cast tan silicone block.">
             <figcaption>Injection mold, based on a Smooth-On tutorial. Sept 2024.</figcaption>
           </figure>
+          <figure class="is-process">
+            <img src="assets/img/pr-mold-mix.jpg" width="576" height="720" loading="lazy" decoding="async"
+                 alt="Hands mixing a small cup of silicone at a workbench.">
+            <figcaption><span class="process-tag">Process</span> Injection mold, in progress: mixing the silicone.</figcaption>
+          </figure>
           <figure>
             <img src="assets/img/ig-clipboard-engraving.jpg" width="576" height="720" loading="lazy" decoding="async"
                  alt="A wooden clipboard laser-engraved with a smiling portrait of a person.">
             <figcaption>Laser-engraved clipboard portrait. Apr 2024.</figcaption>
+          </figure>
+          <figure class="is-process">
+            <img src="assets/img/pr-clip-setup.jpg" width="576" height="720" loading="lazy" decoding="async"
+                 alt="A monitor showing a portrait image being set up in laser cutter software.">
+            <figcaption><span class="process-tag">Process</span> Clipboard engraving, in progress: setting up the portrait file.</figcaption>
+          </figure>
+          <figure class="is-process">
+            <img src="assets/img/pr-clip-engrave.jpg" width="576" height="720" loading="lazy" decoding="async"
+                 alt="A clipboard inside a laser cutter, partway through engraving a portrait.">
+            <figcaption><span class="process-tag">Process</span> Engraving the clipboard on the laser cutter.</figcaption>
           </figure>
           <figure>
             <img src="assets/img/ig-pi-contest.jpg" width="720" height="540" loading="lazy" decoding="async"
                  alt="A model pizza with a tan base, red sauce, yellow cheese, and toppings, made from wood, silicone, and acrylic.">
             <figcaption>My Makerspace Pi Day contest entry: a CNC-routed MDF crust, silicone-molded sauce, and laser-cut acrylic cheese. Mar 2023.</figcaption>
           </figure>
+          <figure class="is-process">
+            <img src="assets/img/pr-pi-cad.jpg" width="720" height="540" loading="lazy" decoding="async"
+                 alt="A computer screen showing a rectangular board layout in CNC software.">
+            <figcaption><span class="process-tag">Process</span> Pi Day pizza, in progress: setting up the crust cut.</figcaption>
+          </figure>
+          <figure class="is-process">
+            <img src="assets/img/pr-pi-cnc.jpg" width="720" height="540" loading="lazy" decoding="async"
+                 alt="A CNC router carving a sheet of MDF inside its enclosure.">
+            <figcaption><span class="process-tag">Process</span> CNC-routing the MDF crust.</figcaption>
+          </figure>
+          <figure class="is-process">
+            <img src="assets/img/pr-pi-laser.jpg" width="720" height="542" loading="lazy" decoding="async"
+                 alt="A laser cutter head engraving a pepperoni pattern into a wooden sheet.">
+            <figcaption><span class="process-tag">Process</span> Laser-engraving a pepperoni.</figcaption>
+          </figure>
           <figure>
             <img src="assets/img/ig-barbie-arduino.jpg" width="576" height="720" loading="lazy" decoding="async"
                  alt="A pink acrylic case holding an Arduino Uno circuit board.">
             <figcaption>This Barbie is an Arduino Uno R3 case. 2023.</figcaption>
+          </figure>
+          <figure class="is-process">
+            <img src="assets/img/pr-barbie-cad.jpg" width="576" height="720" loading="lazy" decoding="async"
+                 alt="A CAD render of a rectangular case with cutouts for an Arduino board.">
+            <figcaption><span class="process-tag">Process</span> Arduino case, in progress: the CAD model.</figcaption>
+          </figure>
+          <figure class="is-process">
+            <img src="assets/img/pr-barbie-proto.jpg" width="576" height="720" loading="lazy" decoding="async"
+                 alt="A grey 3D-printed prototype case holding an Arduino board on a workbench.">
+            <figcaption><span class="process-tag">Process</span> An early 3D-printed prototype for a test fit.</figcaption>
+          </figure>
+          <figure class="is-process">
+            <img src="assets/img/pr-barbie-cut.jpg" width="576" height="720" loading="lazy" decoding="async"
+                 alt="Laser-cut acrylic panels laid out in a row, still in their protective film.">
+            <figcaption><span class="process-tag">Process</span> Laser-cut acrylic panels for the final case.</figcaption>
           </figure>
           <figure>
             <img src="assets/img/ig-first-solder.jpg" width="576" height="720" loading="lazy" decoding="async"
@@ -271,6 +303,21 @@
                  alt="A blue acrylic sign with white decorative lettering reading Welcome, propped up indoors.">
             <figcaption>Welcome sign for Pitt's Muslim Student Association, laser-cut from blue acrylic. Feb 2023.</figcaption>
           </figure>
+          <figure class="is-process">
+            <img src="assets/img/pr-msa-design.jpg" width="720" height="540" loading="lazy" decoding="async"
+                 alt="A monitor showing the welcome sign design laid out in laser cutter software.">
+            <figcaption><span class="process-tag">Process</span> MSA welcome sign, in progress: laying out the design.</figcaption>
+          </figure>
+          <figure class="is-process">
+            <img src="assets/img/pr-msa-laser.jpg" width="720" height="540" loading="lazy" decoding="async"
+                 alt="A laser cutter head moving over a board inside the machine.">
+            <figcaption><span class="process-tag">Process</span> Cutting the sign on the laser cutter.</figcaption>
+          </figure>
+          <figure class="is-process">
+            <img src="assets/img/pr-msa-peel.jpg" width="576" height="720" loading="lazy" decoding="async"
+                 alt="Engraved white lettering on blue acrylic, with the masking partly peeled away.">
+            <figcaption><span class="process-tag">Process</span> Peeling the masking after engraving.</figcaption>
+          </figure>
           <figure>
             <img src="assets/img/ig-msa-gala-sign.jpg" width="720" height="539" loading="lazy" decoding="async"
                  alt="A wooden sign on an easel reading Welcome to the Muslim Student Association's annual Gala, with patterned borders.">
@@ -320,7 +367,7 @@
       </div>
     </section>
 
-    <section class="section" aria-labelledby="else-title">
+    <section class="section section--tint" aria-labelledby="else-title">
       <div class="wrap split">
         <div><h2 id="else-title">Otherwise, you'll find me</h2></div>
         <div>
