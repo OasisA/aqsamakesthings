@@ -38,6 +38,17 @@
     items.forEach(function (el) { el.classList.add("is-visible"); });
   }
 
+  // Logo bar: pause / play button
+  var mq = document.getElementById("logo-marquee");
+  var mqBtn = document.querySelector(".marquee-toggle");
+  if (mq && mqBtn) {
+    mqBtn.addEventListener("click", function () {
+      var paused = mq.classList.toggle("is-paused");
+      mqBtn.setAttribute("aria-pressed", paused ? "true" : "false");
+      mqBtn.textContent = paused ? "Play" : "Pause";
+    });
+  }
+
   // Case-study table of contents: highlight the section in view
   var tocLinks = document.querySelectorAll(".toc a");
   if (tocLinks.length && "IntersectionObserver" in window) {
