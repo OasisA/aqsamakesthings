@@ -402,3 +402,35 @@ figcaption .fig { color: var(--accent); font-weight: 600; margin-right: 0.35em; 
   .logo-strip--dup, .marquee-toggle { display: none; }
   .logo-tile a, .logo-tile img { transition: none; }
 }
+.inline-figure { margin: 1.75rem 0 0; max-width: 18rem; }
+.inline-figure img { border-radius: var(--radius); }
+
+/* ---------- Making page: zoomable photos, lightbox ---------- */
+.zoom-btn { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in;
+  border-radius: var(--radius); overflow: hidden; }
+.zoom-btn img { display: block; transition: transform .5s ease, filter .3s ease; }
+.zoom-btn:hover img, .zoom-btn:focus-visible img { transform: scale(1.04); }
+.zoom-btn:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+.gallery figure figcaption { transition: color .2s; }
+.gallery figure:hover figcaption { color: var(--ink); }
+
+.lightbox { border: 0; padding: 0; margin: auto; width: 100vw; height: 100vh; max-width: 100vw; max-height: 100vh;
+  background: rgba(20, 18, 15, 0.94); color: #f3ede4; }
+.lightbox::backdrop { background: rgba(20, 18, 15, 0.6); }
+.lightbox[open] { display: grid; place-items: center; }
+.lightbox-figure { margin: 0; display: grid; justify-items: center; gap: 0.75rem; padding: 3.5rem 4.5rem 2.5rem; max-width: 100%; }
+.lightbox-figure img { max-width: min(92vw, 900px); max-height: 78vh; width: auto; height: auto; border-radius: var(--radius); }
+.lightbox-figure figcaption { color: #e7ded2; font-size: 0.95rem; text-align: center; max-width: 40rem; margin: 0; }
+.lightbox-count { position: absolute; top: 1.1rem; left: 1.25rem; margin: 0; font: 500 0.85rem var(--sans); color: #bfb4a6; }
+.lightbox-btn { position: absolute; width: 2.75rem; height: 2.75rem; border-radius: 50%; border: 1px solid rgba(255,255,255,.25);
+  background: rgba(255,255,255,.06); color: #fff; font-size: 1.3rem; line-height: 1; cursor: pointer; }
+.lightbox-btn:hover, .lightbox-btn:focus-visible { background: rgba(255,255,255,.18); }
+.lightbox-close { top: 0.75rem; right: 0.75rem; font-size: 1.6rem; }
+.lightbox-prev { left: 0.75rem; top: 50%; transform: translateY(-50%); }
+.lightbox-next { right: 0.75rem; top: 50%; transform: translateY(-50%); }
+@media (max-width: 640px) {
+  .lightbox-figure { padding: 3.5rem 0.75rem 5rem; }
+  .lightbox-prev, .lightbox-next { top: auto; bottom: 1rem; transform: none; }
+  .lightbox-prev { left: calc(50% - 3.25rem); } .lightbox-next { right: calc(50% - 3.25rem); }
+}
+@media (prefers-reduced-motion: reduce) { .zoom-btn img { transition: none; } .zoom-btn:hover img { transform: none; } }
